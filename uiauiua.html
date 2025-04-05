@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confía en mí</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+    button {
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      font-size: 20px;
+      padding: 20px;
+      cursor: pointer;
+      border-radius: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none; /* Ocultamos el video inicialmente */
+    }
+    audio {
+      display: none; /* Ocultamos el reproductor de audio */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botón que aparece al principio -->
+  <button id="confiaBtn">Confía en mí</button>
+
+  <!-- Video a pantalla completa -->
+  <video id="video" autoplay muted loop>
+    <source src="video.mp4" type="video/mp4">
+    Tu navegador no soporta el video.
+  </video>
+
+  <!-- Audio que se reproduce -->
+  <audio id="audio" autoplay loop>
+    <source src="cancion.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio.
+  </audio>
+
+  <script>
+    // Función que se ejecuta al hacer clic en el botón
+    document.getElementById("confiaBtn").addEventListener("click", function() {
+      // Ocultamos el botón
+      this.style.display = "none";
+
+      // Mostramos el video
+      document.getElementById("video").style.display = "block";
+
+      // Reproducimos el audio
+      document.getElementById("audio").play();
+    });
+  </script>
+
+</body>
+</html>
